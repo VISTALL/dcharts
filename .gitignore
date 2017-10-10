@@ -4,6 +4,7 @@
 .settings
 target
 *~
+.consulo/
 src/main/gwt-unitCache/*
 src/main/webapp/VAADIN/*
 src/main/webapp/org.dussan.vaadin.dcharts.DchartsWidgetset/*
