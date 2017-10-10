@@ -5,7 +5,7 @@
 	<groupId>consulo.internal.vaadin</groupId>
 	<artifactId>dcharts</artifactId>
 	<packaging>jar</packaging>
-	<version>1.8.0</version>
+	<version>1.8.1</version>
 	<name>dCharts Widget</name>
 
 	<licenses>
@@ -30,12 +30,9 @@
 		<!-- MANIFEST.MF -->
 		<Implementation-Title>${project.name}</Implementation-Title>
 		<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-		<Implementation-Version>${project.version}-${git.version}</Implementation-Version>
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 		<Vaadin-Package-Version>1</Vaadin-Package-Version>
 		<Vaadin-Widgetsets>org.dussan.vaadin.dcharts.DchartsWidgetset</Vaadin-Widgetsets>
-		<Vaadin-Addon>${project.artifactId}-${project.version}-${git.version}/${project.artifactId}-${project.version}-${git.version}.jar</Vaadin-Addon>
-		<JqPlot-Version>1.0.7r1224</JqPlot-Version>
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
@@ -152,6 +149,25 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Vaadin-Package-Version>${Vaadin-Package-Version}</Vaadin-Package-Version>
+							<Vaadin-License-Title>${Vaadin-License-Title}</Vaadin-License-Title>
+							<Vaadin-Widgetsets>${Vaadin-Widgetsets}</Vaadin-Widgetsets>
+						</manifestEntries>
+					</archive>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
