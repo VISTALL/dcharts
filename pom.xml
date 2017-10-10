@@ -5,7 +5,7 @@
 	<groupId>consulo.internal.vaadin</groupId>
 	<artifactId>dcharts</artifactId>
 	<packaging>jar</packaging>
-	<version>1.8.1</version>
+	<version>1.8.2</version>
 	<name>dCharts Widget</name>
 
 	<licenses>
@@ -19,14 +19,8 @@
 	<properties>
 		<!-- general -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.source>1.6</jdk.source>
-		<jdk.target>1.6</jdk.target>
-		<!-- ftp server -->
-		<ftp.server.id>ftp.dussan.org</ftp.server.id>
-		<ftp.server.url>ftp://${ftp.server.id}</ftp.server.url>
-		<!-- git version -->
-		<get.gitversion>${basedir}/get.gitversion</get.gitversion>
-		<gitversion>${basedir}/.gitversion</gitversion>
+		<jdk.source>1.8</jdk.source>
+		<jdk.target>1.8</jdk.target>
 		<!-- MANIFEST.MF -->
 		<Implementation-Title>${project.name}</Implementation-Title>
 		<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
@@ -36,7 +30,7 @@
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
-		<com.vaadin.vaadin>8.0.0</com.vaadin.vaadin>
+		<com.vaadin.vaadin>8.1.3</com.vaadin.vaadin>
 		<!-- commons -->
 		<commons-codec.commons-codec>1.7</commons-codec.commons-codec>
 		<!-- javax -->
@@ -103,12 +97,6 @@
 			<version>${org.apache.commons.commons-lang3}</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>${commons-codec.commons-codec}</version>
-			<scope>compile</scope>
-		</dependency>		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>

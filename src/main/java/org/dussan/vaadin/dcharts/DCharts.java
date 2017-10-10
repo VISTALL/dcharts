@@ -22,13 +22,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.codec.binary.Base64;
 import org.dussan.vaadin.dcharts.client.rpc.DChartsClientRPC;
 import org.dussan.vaadin.dcharts.client.rpc.DChartsServerRpc;
 import org.dussan.vaadin.dcharts.data.DataSeries;
@@ -46,7 +46,6 @@ import org.dussan.vaadin.dcharts.events.rightclick.ChartDataRightClickHandler;
 import org.dussan.vaadin.dcharts.helpers.ChartDataHelper;
 import org.dussan.vaadin.dcharts.helpers.ManifestHelper;
 import org.dussan.vaadin.dcharts.options.Options;
-
 import com.google.gwt.event.shared.HandlerManager;
 import com.vaadin.server.FileDownloader;
 import com.vaadin.server.StreamResource;
@@ -324,9 +323,8 @@ public class DCharts extends AbstractSingleComponentContainer {
 					case RAW_IMAGE_DATA:
 						try {
 							String data = chartData.getData()[0].toString()
-									.substring(
-											"data:image/png;base64,".length());
-							chartImage = Base64.decodeBase64(data);
+									.substring("data:image/png;base64,".length());
+							chartImage = Base64.getDecoder().decode(data);
 							downloadButton.setEnabled(chartImage.length > 0);
 							fileDownloader
 									.setFileDownloadResource(getChartResource());
