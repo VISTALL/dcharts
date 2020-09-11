@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>consulo.internal.vaadin</groupId>
 	<artifactId>dcharts</artifactId>
 	<packaging>jar</packaging>
-	<version>1.8.2</version>
+	<version>8.12-SNAPSHOT</version>
 	<name>dCharts Widget</name>
 
 	<licenses>
@@ -30,7 +30,7 @@
 		<!-- com.google -->
 		<com.google.code.maven-license-plugin.maven-license-plugin>1.4.0</com.google.code.maven-license-plugin.maven-license-plugin>
 		<!-- com.vaadin -->
-		<com.vaadin.vaadin>8.1.3</com.vaadin.vaadin>
+		<com.vaadin.vaadin>8.12-SNAPSHOT</com.vaadin.vaadin>
 		<!-- commons -->
 		<commons-codec.commons-codec>1.7</commons-codec.commons-codec>
 		<!-- javax -->
@@ -53,27 +53,38 @@
 		<org.mortbay.jetty.maven-jetty-plugin>6.1.26</org.mortbay.jetty.maven-jetty-plugin>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>consulo</id>
+			<url>https://maven.consulo.io/repository/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>interval:60</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
-			<groupId>com.vaadin</groupId>
+			<groupId>consulo.internal.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
 			<version>${com.vaadin.vaadin}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.vaadin</groupId>
+			<groupId>consulo.internal.vaadin</groupId>
 			<artifactId>vaadin-client-compiled</artifactId>
 			<version>${com.vaadin.vaadin}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.vaadin</groupId>
+			<groupId>consulo.internal.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
 			<version>${com.vaadin.vaadin}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.vaadin</groupId>
+			<groupId>consulo.internal.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 			<version>${com.vaadin.vaadin}</version>
 			<scope>compile</scope>
